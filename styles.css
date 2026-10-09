@@ -79,7 +79,11 @@ h1 {
   padding: var(--space-2) var(--space-3);
 }
 
-.active {
+.menu-item:hover {
+  background-color: var(--color-bg);
+}
+
+.menu .active {
   background-color: var(--color-active);
   font-weight: bold;
 }
@@ -105,11 +109,6 @@ h2 {
   margin: 0 0 var(--space-2);
 }
 
-ul {
-  margin: 0;
-  padding-left: var(--space-4);
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -123,10 +122,6 @@ th, td {
 
 thead th {
   background: var(--color-bg);
-}
-
-p {
-
 }
 
 label {
