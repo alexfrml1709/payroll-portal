@@ -8,6 +8,7 @@
   --color-text: #222222;
   --color-muted: #666666;
   --color-accent: #2b5fd9;
+  --color-active: #e8eefb;
   --color-border: #d9dce3;
   --space-1: 4px;
   --space-2: 8px;
@@ -15,37 +16,93 @@
   --space-4: 24px;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   background: var(--color-bg);
   color: var(--color-text);
   font-family: sans-serif;
   line-height: 1.5;
-  padding: var(--space-4);
   margin: 0;
 }
 
-.card {
-  max-width: 680px;
-  margin: 0 auto;
+.header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 h1 {
-  font-size: var(--space-4);
-  margin: 0 0 var(--space-2);
+  font-size: 20px;
+  margin: 0;
 }
 
-p {
+.shell {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  min-height: 0;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-2);
+}
+
+.menu {
+  list-style: none;
   margin: 0;
-  color: var(--color-muted);
+  padding: 0;
+}
+
+.menu-item {
+  padding: var(--space-2) var(--space-3);
+}
+
+.active {
+  background-color: var(--color-active);
+  font-weight: bold;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 0;
+  overflow-y: auto;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 16px;
 }
 
 h2 {
   color: var(--color-accent);
   font-size: 18px;
-  margin: var(--space-4) 0 var(--space-2);
+  margin: 0 0 var(--space-2);
 }
 
 ul {
@@ -66,4 +123,10 @@ th, td {
 
 thead th {
   background: var(--color-bg);
+}
+
+p {
+  color: var(--color-muted);
+  border: 1px dashed var(--color-muted);
+  text-align: center;
 }
