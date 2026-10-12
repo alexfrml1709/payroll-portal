@@ -145,4 +145,5 @@ select {
   padding: var(--space-1) var(--space-2);
   border: 1px solid var(--color-border);
   margin-right: var(--space-3);
+  margin-bottom: var(--space-2);
 }
